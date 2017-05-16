@@ -1,0 +1,32 @@
+version: '2'
+services:
+  web:
+    build:
+      context: ./web
+    environment:
+      PORT: 80
+    ports:
+      - "80:80"
+    restart: on-failure
+    depends_on:
+      - foo
+      - bar
+
+  foo:
+    build:
+      context: ./foo
+    environment:
+      PORT: 80
+    ports:
+      - "80"
+    restart: on-failure
+    depends_on:
+      - bar
+
+  bar:
+    build:
+      context: ./bar
+    environment:
+      PORT: 80
+    restart: on-failure
+

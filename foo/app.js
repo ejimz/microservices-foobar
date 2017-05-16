@@ -12,8 +12,8 @@ var barhost = 'pong'
 app.get('/', function (req, res) {
   var data = {foo: {},bar: {}}
   var options = {
-    host: 'localhost',
-    port: '3000',
+    host: 'bar', // bar service host
+    port: '80', // bar service port
     path: '/'
   };
 
@@ -28,8 +28,9 @@ app.get('/', function (req, res) {
 
     //the whole response has been recieved, so we just print it out here
     response.on('end', function () {
-      barobj = JSON.parse( pongjson);
-      fooobj = {ping: {host: cmd.hostname()},bar: {host: pongobj.hostname}}
+      barobj = JSON.parse( barjson);
+      fooobj = {foo: {host: cmd.hostname()},bar: {host: barobj.hostname}}
+      console.log("foo - " + cmd.hostname());
       res.json(fooobj);
     });
   }
