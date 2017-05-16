@@ -1,4 +1,6 @@
-## Microservices app to test orchestrator systems like k8s and ECS
+# Microservices-foobar
+
+### Microservices app to test orchestrator systems like k8s and ECS
 
 it has 1 web proxy and 3 web services:
 
