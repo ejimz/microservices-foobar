@@ -18,4 +18,4 @@ app.get('/', function (req, res) {
   res.render('index');
 })
 
-var server = app.listen(process.env.PORT || 3000, function(){ console.log("servidor inicializado en el puerto ", server.address().port) });
+var server = app.listen(process.env.PORT || 3000, function(){ console.log("Web app started on port ", server.address().port) });

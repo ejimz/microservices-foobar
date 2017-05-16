@@ -12,4 +12,4 @@ app.get('/', function (req, res) {
   res.json({ hostname : cmd.hostname(), host: 'bar'});
 })
 
-var server = app.listen(process.env.PORT || 3000, function(){ console.log("servidor inicializado en el puerto ", server.address().port) });
+var server = app.listen(process.env.PORT || 3000, function(){ console.log("Bar app started on port ", server.address().port) });

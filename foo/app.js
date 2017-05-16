@@ -38,4 +38,4 @@ app.get('/', function (req, res) {
 
 });
 
-var server = app.listen(process.env.PORT || 3000, function(){ console.log("servidor inicializado en el puerto ", server.address().port) });
+var server = app.listen(process.env.PORT || 3000, function(){ console.log("Foo app started on port ", server.address().port) });
