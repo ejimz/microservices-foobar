@@ -12,3 +12,9 @@ Web ---> request to ---> Foo ---> request to ---> Bar
 
 Web <--- return hostname <--- Foo <--- return hostname <--- Bar
 
+### Docker
+
+To run it by docker just move inside the project and run the next command:
+```
+docker-compose up --build
+```
