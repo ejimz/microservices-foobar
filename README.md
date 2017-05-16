@@ -10,5 +10,6 @@ it has 1 web proxy and 3 web services:
 - Foo: service that return its hostname as json
 
 Web-proxy ---> Web ---> request to ---> Foo ---> request to ---> Bar
+
 Web-proxy <--- Web <--- return hostname <--- Foo <--- return hostname <--- Bar
 
