@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     build:
-      context: ./web
+      context: ./src/web
     environment:
       PORT: 80
     ports:
@@ -14,7 +14,7 @@ services:
 
   foo:
     build:
-      context: ./foo
+      context: ./src/foo
     environment:
       PORT: 80
     ports:
@@ -25,7 +25,7 @@ services:
 
   bar:
     build:
-      context: ./bar
+      context: ./src/bar
     environment:
       PORT: 80
     restart: on-failure

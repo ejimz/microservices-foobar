@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -11,9 +12,29 @@ spec:
     spec:
       containers:
       - name: bar
-        image: 738947182016.dkr.ecr.eu-central-1.amazonaws.com/bar:latest
+        image: image_url/bar:latest
         ports:
         - containerPort: 80
         env:
           - name: "PORT"
             value: "80"
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: foo
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: foo
+    spec:
+      containers:
+      - name: foo
+        image: image_url/bar:latest
+        ports:
+        - containerPort: 81
+        env:
+          - name: "PORT"
+            value: "81"

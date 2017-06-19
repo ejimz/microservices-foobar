@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/subnets: subnet-A,subnet-B,subnet-C
+    alb.ingress.kubernetes.io/security-groups: nodes.poc.cluster
+    alb.ingress.kubernetes.io/tags: Environment=dev
+spec:
+  rules:
+  - host: foo.poc.cluster
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: foo
+          servicePort: 80
+  - host: bar.poc.cluster
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: bar
+          servicePort: 80
